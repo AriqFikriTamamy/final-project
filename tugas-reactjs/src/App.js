@@ -1,15 +1,13 @@
-import './App.css';
+import React from 'react';
+import Tugas6 from './tugas6/tugas6';
+import Tugas7 from './tugas7/tugas7';
 
 function App() {
-  let nama = 'Ariq';
   return (
-    <div className="App">
-      <div className='title'>
-        <h1>Hi, Saya {nama}</h1>
-        <hr></hr>
-        <p>Saya dari Batch 36 sudah berhasil menginstall React</p>
-      </div>
-    </div>
+    <React.Fragment>
+      <Tugas6/>
+      <Tugas7 name="nama anda" batch="batch anda" email="email anda"/>
+    </React.Fragment>
   );
 }
 
