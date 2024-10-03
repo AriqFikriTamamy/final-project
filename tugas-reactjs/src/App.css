@@ -54,6 +54,7 @@
   /* height: 250px; */
   width: 50rem;
   margin-top: 5rem;
+  margin-bottom: 0.5rem;
   padding: 0px 15px;
   border-radius: 10px;
   box-shadow: 1px 1px 5px black;
@@ -65,4 +66,17 @@ h1 {
 
 p {
   padding-bottom: 20px;
+}
+
+#number {
+  text-align: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
 }
