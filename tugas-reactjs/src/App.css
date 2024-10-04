@@ -79,4 +79,9 @@ p {
   flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
+  border: 0.5px solid black;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 1px black;
 }

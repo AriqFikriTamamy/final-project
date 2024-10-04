@@ -12,8 +12,8 @@ const Tugas8 = () => {
         <div className='App'>
             <div className='title'>
                 <p id='number'>{number}</p>
-                <button className='btn' onClick={handleNumber}>Tambah</button>
-                {number > 10 && <p>State count sudah lebih dari 10!</p>}
+                <button className='btn rounded' onClick={handleNumber}>Tambah</button>
+                {number > 10 && <span>State count sudah lebih dari 10!</span>}
             </div>
         </div>
     )
