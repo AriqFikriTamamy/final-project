@@ -50,8 +50,6 @@ const Tugas10 = () => {
                                     return 'D';
                                 }else if(score < 50){
                                     return 'E';
-                                }else {
-                                    return 'Jangan kosong dong nilainya'
                                 }
                             }
                         return(
