@@ -85,3 +85,33 @@ p {
 .btn:hover {
   box-shadow: 1px 1px 1px black;
 }
+
+.add-data {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.add {
+  margin-bottom: 10px;
+}
+
+form,
+.form-edit {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.name,
+.course,
+.score {
+  margin-right: 10px;
+}
+
+#submit {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: lightgrey;
+  color: black;
+}
