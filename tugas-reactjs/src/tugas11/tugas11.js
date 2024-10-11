@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import '../App.css';
+// CSS digunakan hanya untuk menghilangkan tanda panah di input number, sebab di tailwind tidak ada fungsi tersebut jadi harus di konfigurasi manual menggunakan CSS Native
 
 
 function Tugas11(){
@@ -172,35 +174,37 @@ function Tugas11(){
             {/* Edit Data */}
             {editData && (
                 <>
-                <h1 className='font-bold flex items-center justify-center mb-5 uppercase'>Edit Data</h1>
-                <div className='flex items-center justify-center'>
-                    <br></br>
-                    <br></br>
-                    <div className='mr-5'>
-                        <label className='font-bold'>Nama:</label>
+                <div className='grid ml-5'>
+                    <h1 className='font-bold flex items-center justify-center mb-5 uppercase'>Edit Data</h1>
+                    <div className='flex items-center justify-center'>
                         <br></br>
-                        <input onChange={handleInputChange} type='text' name='name' value={editData.name}></input>
-                    </div>
-                    <div className='mr-5'>
-                        <label className='font-bold'>Mata Kuliah:</label>
                         <br></br>
-                        <input onChange={handleInputChange} type='text' name='course' value={editData.course}></input>
+                        <div className='mr-5'>
+                            <label className='font-bold'>Nama:</label>
+                            <br></br>
+                            <input onChange={handleInputChange} type='text' name='name' value={editData.name}></input>
+                        </div>
+                        <div className='mr-5'>
+                            <label className='font-bold'>Mata Kuliah:</label>
+                            <br></br>
+                            <input onChange={handleInputChange} type='text' name='course' value={editData.course}></input>
+                        </div>
+                        <div className='mr-5'>
+                            <label className='font-bold'>Nilai:</label>
+                            <br></br>
+                            <input onChange={handleInputChange} type='number' name='score' value={editData.score}></input>
+                        </div>
                     </div>
-                    <div className='mr-5'>
-                        <label className='font-bold'>Nilai:</label>
-                        <br></br>
-                        <input onChange={handleInputChange} type='number' name='score' value={editData.score}></input>
+                    <div className='flex items-center justify-center mt-5'>
+                        <button onClick={handleSaveInput} type="button" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Simpan</button>
+                        <button onClick={() => setEditData(null)} type="button" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Batal</button>
                     </div>
-                </div>
-                <div className='flex items-center justify-center mt-5'>
-                    <button onClick={handleSaveInput} type="button" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Simpan</button>
-                    <button onClick={() => setEditData(null)} type="button" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Batal</button>
                 </div>
                 </>
             )}
 
             {/* Add Data */}
-            <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
+            <form onSubmit={handleSubmit} className="grid max-w-md mx-auto">
                 <div className="mb-5 mt-5">
                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama: </label>
                     <input onChange={handleInput} type="text" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nama Peserta Didik" name='name' value={input.name} required />
@@ -209,9 +213,9 @@ function Tugas11(){
                     <label htmlFor="course" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Kuliah: </label>
                     <input onChange={handleInput} type="text" id="course" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Mata Kuliah Peserta Didik' name='course' value={input.course} required />
                 </div>
-                <div className="mb-5">
+                <div className="mb-5 justify-self-start">
                     <label htmlFor="score" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nilai: </label>
-                    <input onChange={handleInput} type="number" id="score" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min='0' max='100' placeholder='Nilai Peserta Didik' name='score' value={input.score} required />
+                    <input onChange={handleInput} type="number" id="score" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min='0' max='100' placeholder='0 - 100' name='score' value={input.score} required />
                 </div>
                 <button type={'submit'} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-5">Tambah Data</button>
             </form>
