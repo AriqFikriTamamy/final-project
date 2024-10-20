@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CreateDataSidebar from './createData_sidebar';
 import DashboardNavbar from './dashboard_navbar';
+import Cookies from 'js-cookie';
 
 function CreateData() {
     const [input, setInput] = useState(
@@ -49,7 +50,10 @@ function CreateData() {
         event.preventDefault();
         console.log(input);
         let { company_image_url, title, job_description, job_qualification, job_type, job_tenure, job_status, company_name, company_city, salary_min, salary_max } = input;
-        axios.post('https://final-project-api-alpha.vercel.app/api/jobs', { company_image_url, title, job_description, job_qualification, job_type, job_tenure, job_status, company_name, company_city, salary_min, salary_max }).then((res) => { console.log(res); setFetchStatus(true) })
+        axios.post('https://final-project-api-alpha.vercel.app/api/jobs', { company_image_url, title, job_description, job_qualification, job_type, job_tenure, job_status, company_name, company_city, salary_min, salary_max }).then((res) => {
+            console.log(res); setFetchStatus(true); let { token } = res.data
+            Cookies.set('token', token)
+        })
     }
     return (
         <>
