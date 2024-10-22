@@ -7,11 +7,11 @@ function FindCompany() {
             </div>
             <div className="flex flex-row mt-5 mx-5 text-2xl font-bold">
                 <div className="px-5 py-5 mr-5 rounded-lg outline outline-gray-500">
-                    <img src="src/component/assets/sanbercode.png"></img>
+                    <img src="src/assets/sanbercode.png"></img>
                     <p>Sanbercode</p>
                 </div>
                 <div className="px-5 py-5 rounded-lg outline outline-gray-500">
-                    <img src="src/component/assets/netflix.png" />
+                    <img src="src/assets/netflix.png" />
                     <p className="my-10">Netflix</p>
                 </div>
             </div>

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 function CarouselImage() {
     const [activeIndex, setActiveIndex] = useState(0);
     const items = [
-        { src: 'src/component/assets/Carousel.png', alt: 'Image 1' },
-        { src: 'src/component/assets/Carousel2.png', alt: 'Image 2' },
+        { src: 'src/assets/Carousel.png', alt: 'Image 1' },
+        { src: 'src/assets/Carousel2.png', alt: 'Image 2' },
     ];
 
     useEffect(() => {
